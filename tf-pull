@@ -1,0 +1,6 @@
+head=`git symbolic-ref HEAD`
+branchname=${head#refs/heads/}
+git checkout master
+git tf pull --rebase
+git checkout $branchname
+git rebase master
